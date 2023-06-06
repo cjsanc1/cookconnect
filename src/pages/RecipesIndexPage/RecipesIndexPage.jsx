@@ -1,15 +1,25 @@
-import { checkToken } from '../../utilities/users-service';
+// import { checkToken } from '../../utilities/users-service';
+import { useEffect, useState } from 'react'
+import { recipesIndexRequest } from '../../utilities/recipes-api';
+import RecipesList from '../../components/RecipesList/RecipesList';
 
 export default function RecipesIndexPage() {
-  async function handleCheckToken() {
-    const expDate = await checkToken();
-    console.log(expDate);
-  }
-  
+  const[recipes, setRecipes] = useState([]);
+  setRecipes(recipes)
+  useEffect(()=>{
+async function getRecipes(){
+const recipes = await recipesIndexRequest();
+console.log(recipes)
+}
+
+getRecipes();
+}, [])
+
   return (
     <>
-      <h1>OrderHistoryPage</h1>
-      <button onClick={handleCheckToken}>Check When My Login Expires</button>
+      <h1>All Recipes</h1>
+      <RecipesList recipes={recipes}></RecipesList>
+    
     </>
   );
 }

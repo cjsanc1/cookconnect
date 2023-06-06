@@ -5,6 +5,7 @@ import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import NewRecipePage from '../NewRecipesPage/NewRecipesPage';
 import RecipesIndexPage from '../RecipesIndexPage/RecipesIndexPage';
+import HomePage from '../HomePage/HomePage';
 import NavBar from '../../components/NavBar/NavBar';
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}
+              <Route path='/' element={<HomePage />} />
               <Route path="/recipes/new" element={<NewRecipePage />} />
               <Route path="/recipes" element={<RecipesIndexPage />} />
             </Routes>
