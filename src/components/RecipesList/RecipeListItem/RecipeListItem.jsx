@@ -1,8 +1,13 @@
-export default function RecipesList({recipe}){
+import { Link } from "react-router-dom"
+
+export default function RecipesListItem({recipe}){
     return(
         <>
-        <p>{JSON.stringify(recipe)}</p>
-        
+        <p>
+            <Link to={`/recipes/${recipe._id}`}>
+                {recipe.title}
+            </Link>
+        </p>
         </>
     )
 }

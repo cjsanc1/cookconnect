@@ -19,9 +19,13 @@ const recipeSchema = new Schema({
     type: [String],
     required: true,
   },
-  imageUrl: {
-    type: String,
-  },
+  uploaded_by: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  }
+  // imageUrl: {
+  //   type: String,
+  // },
 }, {
   timestamps: true,
 

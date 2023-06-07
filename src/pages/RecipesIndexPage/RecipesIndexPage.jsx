@@ -5,11 +5,10 @@ import RecipesList from '../../components/RecipesList/RecipesList';
 
 export default function RecipesIndexPage() {
   const[recipes, setRecipes] = useState([]);
-  setRecipes(recipes)
   useEffect(()=>{
 async function getRecipes(){
 const recipes = await recipesIndexRequest();
-console.log(recipes)
+setRecipes(recipes)
 }
 
 getRecipes();

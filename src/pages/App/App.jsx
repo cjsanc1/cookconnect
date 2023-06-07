@@ -7,6 +7,7 @@ import NewRecipePage from '../NewRecipesPage/NewRecipesPage';
 import RecipesIndexPage from '../RecipesIndexPage/RecipesIndexPage';
 import HomePage from '../HomePage/HomePage';
 import NavBar from '../../components/NavBar/NavBar';
+import RecipeDetailPage from '../RecipeDetailPage/RecipeDetailPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -21,6 +22,7 @@ export default function App() {
               <Route path='/' element={<HomePage />} />
               <Route path="/recipes/new" element={<NewRecipePage />} />
               <Route path="/recipes" element={<RecipesIndexPage />} />
+              <Route path="/recipes/:recipeId" element={<RecipeDetailPage />} />
             </Routes>
           </>
           :
