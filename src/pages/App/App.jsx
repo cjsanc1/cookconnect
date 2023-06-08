@@ -1,7 +1,8 @@
+import { ChakraProvider } from '@chakra-ui/react'
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
-import './App.css';
+// import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import NewRecipePage from '../NewRecipesPage/NewRecipesPage';
 import RecipesIndexPage from '../RecipesIndexPage/RecipesIndexPage';
@@ -13,6 +14,7 @@ export default function App() {
   const [user, setUser] = useState(getUser());
 
   return (
+    <ChakraProvider>
     <main className="App">
       { user ?
           <>
@@ -29,5 +31,6 @@ export default function App() {
           <AuthPage setUser={setUser} />
       }
     </main>
+    </ChakraProvider>
   );
 }
