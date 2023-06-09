@@ -1,8 +1,7 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, Box } from '@chakra-ui/react';
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
-// import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import NewRecipePage from '../NewRecipesPage/NewRecipesPage';
 import RecipesIndexPage from '../RecipesIndexPage/RecipesIndexPage';
@@ -15,22 +14,23 @@ export default function App() {
 
   return (
     <ChakraProvider>
-    <main className="App">
-      { user ?
+      <Box>
+        {user ? (
           <>
             <NavBar user={user} setUser={setUser} />
+            <Box p={4}>
             <Routes>
-              {/* Route components in here */}
-              <Route path='/' element={<HomePage />} />
+              <Route path="/" element={<HomePage />} />
               <Route path="/recipes/new" element={<NewRecipePage />} />
               <Route path="/recipes" element={<RecipesIndexPage />} />
               <Route path="/recipes/:recipeId" element={<RecipeDetailPage />} />
             </Routes>
+            </Box>
           </>
-          :
+        ) : (
           <AuthPage setUser={setUser} />
-      }
-    </main>
+        )}
+      </Box>
     </ChakraProvider>
   );
 }

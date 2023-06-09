@@ -1,10 +1,15 @@
-import NewRecipeForm from "../../components/NewRecipeForm/NewRecipeForm";
+import { Box, Center, Heading } from '@chakra-ui/react';
+import NewRecipeForm from '../../components/NewRecipeForm/NewRecipeForm';
 
 export default function NewRecipePage() {
   return (
-    <>
-    <h1>New Recipes Page</h1>
-    <NewRecipeForm></NewRecipeForm>
-    </>
+    <Center>
+    <Box p={8}>
+      <Heading as="h1" mb={8}>
+        New Recipe Page
+      </Heading>
+      <NewRecipeForm />
+    </Box>
+    </Center>
   );
 }

@@ -17,6 +17,7 @@ async function index(req, res) {
     res.status(400).json(err)
   }
 }
+
 async function create(req, res){
 try{
   req.body.uploaded_by = req.user._id;
