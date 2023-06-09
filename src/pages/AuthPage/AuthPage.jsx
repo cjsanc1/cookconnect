@@ -3,6 +3,7 @@ import { Box, Heading, Button, Center, Text } from '@chakra-ui/react';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
 
+
 export default function AuthPage({ setUser }) {
   const [showSignUp, setShowSignUp] = useState(false);
 
