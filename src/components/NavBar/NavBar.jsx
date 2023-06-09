@@ -1,11 +1,17 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Link as ChakraLink, Flex, Spacer, Box, Text } from '@chakra-ui/react';
 import * as userService from '../../utilities/users-service';
 
+
+
 export default function NavBar({ user, setUser }) {
+  const navigate = useNavigate();
+
   function handleLogOut() {
     userService.logOut();
+    window.location.href = '/'
     setUser(null);
+    console.log('working')
   }
 
   return (

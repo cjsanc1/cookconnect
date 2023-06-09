@@ -23,7 +23,7 @@ export default function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/recipes/new" element={<NewRecipePage />} />
               <Route path="/recipes" element={<RecipesIndexPage />} />
-              <Route path="/recipes/:recipeId" element={<RecipeDetailPage />} />
+              <Route path="/recipes/:recipeId" element={<RecipeDetailPage user={user} />} />
             </Routes>
             </Box>
           </>

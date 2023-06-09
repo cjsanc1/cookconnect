@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { Box, Button, Text, UnorderedList, List } from '@chakra-ui/react';
 import EditRecipeForm from './EditRecipeForm/EditRecipeForm';
 
-export default function RecipeDetail({ recipe, handleDelete, setRecipe }) {
+export default function RecipeDetail({ recipe, handleDelete, setRecipe, user }) {
   const [editFormIsOpen, setEditFormIsOpen] = useState(false);
 
   function toggleEditForm() {
     setEditFormIsOpen(prevState => !prevState);
   }
-
+  console.log(user)
+const isUserRecipe = recipe.uploaded_by === user._id
   return (
     <Box p={4} borderWidth="1px" borderRadius="md" mb={4}>
         <center>
@@ -23,10 +24,15 @@ export default function RecipeDetail({ recipe, handleDelete, setRecipe }) {
         ))}
       </UnorderedList>
       <Text fontSize="md" mb={2}>Instructions: {recipe.instructions}</Text>
-      <Button colorScheme="red" onClick={handleDelete} mb={2}>Delete {recipe.title}</Button>
+      { isUserRecipe ? 
+      <Button colorScheme="red" onClick={handleDelete} mb={2}>Delete {recipe.title}</Button>: ''
+    }
+    { isUserRecipe ? 
       <Button onClick={toggleEditForm} mb={2} ml={4}>
         {editFormIsOpen ? 'X' : 'Open Editor'}
-      </Button>
+      </Button>: ''
+    }
+       
       {editFormIsOpen && (
         <EditRecipeForm
           recipe={recipe}
