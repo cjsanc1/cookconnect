@@ -58,7 +58,9 @@ export default function RecipeDetail({
               <UnorderedList>
                 {recipe.instructions.map((instruction, index) => (
                   <List key={index}>
-                    <Text fontSize="md">{instruction}</Text>
+                    <Text fontSize="md">
+                      {index + 1}. {instruction}
+                    </Text>
                   </List>
                 ))}
               </UnorderedList>
