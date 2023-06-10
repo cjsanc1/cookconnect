@@ -47,6 +47,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  }, 
+  "engines": {
+    "node": "19.8.1"
   },
-  "proxy": "http://localhost:3001"
+  "heroku-postbuild": "npm run build"
 }
