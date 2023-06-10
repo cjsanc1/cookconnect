@@ -1,16 +1,18 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { getRecipeRequest, deleteRecipeRequest } from "../../utilities/recipes-api";
+import {
+  getRecipeRequest,
+  deleteRecipeRequest,
+} from "../../utilities/recipes-api";
 import { useEffect, useState } from "react";
 import { Box, Heading, Text, Center, Spinner } from "@chakra-ui/react";
 import RecipeDetail from "../../components/RecipeDetail/RecipeDetail";
 
-export default function RecipeDetailPage({user}) {
+export default function RecipeDetailPage({ user }) {
   let { recipeId } = useParams();
   const [recipe, setRecipe] = useState({});
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
 
   useEffect(() => {
     async function getRecipe() {
@@ -21,7 +23,7 @@ export default function RecipeDetailPage({user}) {
           setLoading(false);
         }, 500);
       } else {
-        setError('No Recipe Found');
+        setError("No Recipe Found");
         setLoading(false);
       }
     }
@@ -30,18 +32,13 @@ export default function RecipeDetailPage({user}) {
 
   async function handleDelete(e) {
     const deleteResponse = await deleteRecipeRequest(recipe._id);
-    if (deleteResponse.data === 'success') {
-      navigate('/recipes');
+    if (deleteResponse.data === "success") {
+      navigate("/recipes");
     }
   }
 
   return (
     <Box p={4}>
-      <Center>
-        <Heading as="h1" size="xl" mb={4}>
-        Here's your Recipe
-      </Heading>
-      </Center>
       {loading ? (
         <Center>
           <Spinner size="xl" />
@@ -49,7 +46,12 @@ export default function RecipeDetailPage({user}) {
       ) : error ? (
         <Text>{error}</Text>
       ) : (
-        <RecipeDetail recipe={recipe} handleDelete={handleDelete} setRecipe={setRecipe} user={user}/>
+        <RecipeDetail
+          recipe={recipe}
+          handleDelete={handleDelete}
+          setRecipe={setRecipe}
+          user={user}
+        />
       )}
     </Box>
   );
