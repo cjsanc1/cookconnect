@@ -9,16 +9,17 @@ export default function AuthPage({ setUser }) {
   return (
     <Center height="100vh">
       <Center>
-        <Image src="/CookConnect.jpeg" alt="CookConnect Image" mt={4} mb={8} />
+        <Image src="/CookConnect.jpeg" alt="CookConnect Image" />
+        <Text mb={4}>
+          Welcome to CookConnect! Login to start sharing your amazing recipes
+          and to enjoy recipes others have shared.
+        </Text>
       </Center>
       <Box p={4} maxW="400px" borderWidth="1px" borderRadius="md">
         <Heading as="h1" size="xl" mb={4}>
           {showSignUp ? "Sign Up" : "Login"}
         </Heading>
-        <Text mb={4}>
-          Welcome to CookConnect! Login to start sharing your amazing recipes
-          and to enjoy recipes others have shared.
-        </Text>
+
         {showSignUp ? (
           <SignUpForm setUser={setUser} />
         ) : (
@@ -28,7 +29,7 @@ export default function AuthPage({ setUser }) {
           <Text mb={3}>Don't have an account?</Text>
         </Center>
         <Center>
-          <Button onClick={() => setShowSignUp(!showSignUp)} mb={4} w="89%">
+          <Button onClick={() => setShowSignUp(!showSignUp)} mb={4} w="87%">
             {showSignUp ? "Already have an account? Log In" : "Sign Up Here"}
           </Button>
         </Center>
