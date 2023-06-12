@@ -28,7 +28,7 @@ export default function AuthPage({ setUser }) {
           <Text mb={3}>Don't have an account?</Text>
         </Center>
         <Center>
-          <Button onClick={() => setShowSignUp(!showSignUp)} mb={4} w="88%">
+          <Button onClick={() => setShowSignUp(!showSignUp)} mb={4} w="89%">
             {showSignUp ? "Already have an account? Log In" : "Sign Up Here"}
           </Button>
         </Center>
