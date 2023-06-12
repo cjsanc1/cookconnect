@@ -28,7 +28,7 @@ export default function NewRecipeForm() {
       title: title,
       description: description,
       ingredients: ingredients.split(","),
-      instructions: instructions.split(","),
+      instructions: instructions.split("+"),
     };
 
     function parseIngredients() {
@@ -86,7 +86,8 @@ export default function NewRecipeForm() {
 
           <FormLabel htmlFor="instructions">Instructions</FormLabel>
           <Text mb={2} color="grey">
-            When adding your instructions, seperate each step with a comma(,)
+            When adding your instructions, seperate each step with a addition
+            symbol(+)
           </Text>
           <Textarea
             id="instructions"

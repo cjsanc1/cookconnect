@@ -22,7 +22,7 @@ export default function EditRecipeForm({
   const [description, setDescription] = useState(recipe.description);
   const [ingredients, setIngredients] = useState(recipe.ingredients.join(", "));
   const [instructions, setInstructions] = useState(
-    recipe.instructions.join(", ")
+    recipe.instructions.join("+ ")
   );
   const [error, setError] = useState(null);
 
@@ -35,7 +35,7 @@ export default function EditRecipeForm({
         .split(",")
         .map((ingredient) => ingredient.trim()),
       instructions: instructions
-        .split(",")
+        .split("+")
         .map((instruction) => instruction.trim()),
     };
     try {
