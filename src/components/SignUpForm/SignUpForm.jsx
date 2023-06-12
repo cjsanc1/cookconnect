@@ -36,7 +36,7 @@ export default function SignUpForm({ setUser }) {
   const isDisabled = formData.password !== formData.confirm;
 
   return (
-    <Box borderWidth="1px" borderRadius="md" mb={3}>
+    <Box p={4} borderWidth="1px" borderRadius="md" mb={3}>
       <form autoComplete="off" onSubmit={handleSubmit}>
         <FormControl>
           <FormLabel>Name</FormLabel>
