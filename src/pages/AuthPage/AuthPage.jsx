@@ -9,8 +9,10 @@ export default function AuthPage({ setUser }) {
   return (
     <Center height="100vh" flexDirection="column">
       <Box textAlign="center">
-        <Image src="/CookConnect.jpeg" alt="CookConnect Image" />
-        <Text mt={4}>
+        <Center>
+          <Image src="/CookConnect.jpeg" alt="CookConnect Image" />
+        </Center>
+        <Text mt={4} mb={4}>
           Welcome to CookConnect! Login to start sharing your amazing recipes
           and to enjoy recipes others have shared.
         </Text>
