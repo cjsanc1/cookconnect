@@ -17,7 +17,7 @@ export default function AuthPage({ setUser }) {
           and to enjoy recipes others have shared.
         </Text>
       </Box>
-      <Box p={4} maxW="400px" borderWidth="1px" borderRadius="md">
+      <Box p={4} maxW="400px">
         <Heading as="h1" size="xl" mb={4}>
           {showSignUp ? "Sign Up" : "Login"}
         </Heading>
@@ -28,11 +28,15 @@ export default function AuthPage({ setUser }) {
           <LoginForm setUser={setUser} />
         )}
         <Center>
-          <Text mb={3}>Don't have an account?</Text>
+          {showSignUp ? (
+            <Text mb={3}>Don't have an account?</Text>
+          ) : (
+            <Text mb={3}>Already have an account?</Text>
+          )}
         </Center>
         <Center>
           <Button onClick={() => setShowSignUp(!showSignUp)} mb={4} w="87%">
-            {showSignUp ? "Already have an account? Log In" : "Sign Up Here"}
+            {showSignUp ? "Log In" : "Sign Up Here"}
           </Button>
         </Center>
       </Box>
