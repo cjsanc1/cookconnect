@@ -8,13 +8,13 @@ export default function AuthPage({ setUser }) {
 
   return (
     <Center height="100vh" flexDirection="column">
-      <Center>
+      <Box textAlign="center">
         <Image src="/CookConnect.jpeg" alt="CookConnect Image" />
-        <Text mb={4}>
+        <Text mt={4}>
           Welcome to CookConnect! Login to start sharing your amazing recipes
           and to enjoy recipes others have shared.
         </Text>
-      </Center>
+      </Box>
       <Box p={4} maxW="400px" borderWidth="1px" borderRadius="md">
         <Heading as="h1" size="xl" mb={4}>
           {showSignUp ? "Sign Up" : "Login"}
