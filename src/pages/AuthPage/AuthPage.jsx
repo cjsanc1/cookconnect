@@ -7,7 +7,7 @@ export default function AuthPage({ setUser }) {
   const [showSignUp, setShowSignUp] = useState(false);
 
   return (
-    <Center height="100vh">
+    <Center height="100vh" flexDirection="column">
       <Center>
         <Image src="/CookConnect.jpeg" alt="CookConnect Image" />
         <Text mb={4}>
