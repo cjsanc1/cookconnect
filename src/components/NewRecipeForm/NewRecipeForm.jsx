@@ -86,7 +86,7 @@ export default function NewRecipeForm() {
 
           <FormLabel htmlFor="instructions">Instructions</FormLabel>
           <Text mb={2} color="grey">
-            When adding your instructions, seperate each step with a addition
+            When adding your instructions, seperate each step with an addition
             symbol(+)
           </Text>
           <Textarea

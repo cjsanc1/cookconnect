@@ -100,7 +100,8 @@ export default function EditRecipeForm({
           </FormLabel>
         </Center>
         <Text mb={2} color="grey" textAlign="center">
-          When adding your instructions, seperate each step with a comma(,)
+          When adding your instructions, seperate each step with an addition
+          symbol(+)
         </Text>
         <Textarea
           id="instructions"
