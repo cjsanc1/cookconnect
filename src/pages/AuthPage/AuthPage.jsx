@@ -29,9 +29,9 @@ export default function AuthPage({ setUser }) {
         )}
         <Center>
           {showSignUp ? (
-            <Text mb={3}>Don't have an account?</Text>
-          ) : (
             <Text mb={3}>Already have an account?</Text>
+          ) : (
+            <Text mb={3}>Don't have an account?</Text>
           )}
         </Center>
         <Center>
