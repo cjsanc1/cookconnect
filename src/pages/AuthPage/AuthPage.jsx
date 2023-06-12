@@ -36,7 +36,7 @@ export default function AuthPage({ setUser }) {
         </Center>
         <Center>
           <Button onClick={() => setShowSignUp(!showSignUp)} mb={4} w="87%">
-            {showSignUp ? "Log In" : "Sign Up Here"}
+            {showSignUp ? "Log In Here" : "Sign Up Here"}
           </Button>
         </Center>
       </Box>

@@ -36,7 +36,7 @@ export default function LoginForm({ setUser }) {
   }
 
   return (
-    <Box p={4} mb={0} borderWidth="1px" borderRadius="md">
+    <Box mb={3} borderWidth="1px" borderRadius="md">
       <form autoComplete="off" onSubmit={handleSubmit}>
         <FormControl>
           <FormLabel>Email</FormLabel>
